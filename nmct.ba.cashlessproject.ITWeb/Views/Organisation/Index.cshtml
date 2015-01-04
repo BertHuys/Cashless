@@ -1,0 +1,26 @@
+﻿﻿@model IEnumerable<nmct.ba.cashlessproject.models.Web.Organisation>
+@{
+    ViewBag.Title = "Organisation";
+}
+
+<h2>Verenigingen Overzicht</h2>
+<br />
+<p><a class="btn btn-primary" href="/Organisation/New">Add Organisation</a></p>
+<br />
+<table class="table table-striped">
+    <tr>
+        <th class="col-md-1">Organisation</th>
+        <th class="col-md-1">Address</th>
+        <th class="col-md-1">Email</th>
+        <th class="col-md-1"></th>
+    </tr>
+    @foreach (nmct.ba.cashlessproject.models.Web.Organisation org in @Model)
+    {
+        <tr>
+            <td class="col-md-1">@org.OrganisationName</td>
+            <td class="col-md-1">@org.Address</td>
+            <td class="col-md-1">@org.Email</td>
+            <td class="col-md-1"><a href="/Organisation/Edit/@org.ID">Edit</a> | <a href="/Organisations/Info/@org.ID">Info</a></td>
+        </tr>
+    }
+</table>

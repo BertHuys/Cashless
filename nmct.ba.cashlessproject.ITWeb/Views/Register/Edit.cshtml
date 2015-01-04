@@ -1,0 +1,33 @@
+﻿﻿@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit an existing register</h2>
+<br />
+<form action="/Registers/Edit" method="post">
+    <p>
+        Select Register
+    <p />
+    <select name="register">
+        @foreach (var item in ViewBag.Register)
+        {
+            <option value="@item.Id">@item.RegisterName</option>
+        }
+    </select>
+
+    <p>
+        Select Organisation
+    </p>
+    <select name="vereniging">
+        @foreach (var item in ViewBag.Organisation)
+        {
+            <option value="@item.ID">@item.OrganisationName</option>
+        }
+    </select>
+    <br />
+    <br />
+    <p>
+        <input class="btn btn-primary" type="submit" value="Assign" />
+        <a href="/Register/Index">Back</a>
+    </p>
+</form>

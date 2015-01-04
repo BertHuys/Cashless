@@ -1,0 +1,29 @@
+﻿
+@model IEnumerable<nmct.ba.cashlessproject.ITWeb.ViewModels.LogVM>
+@{
+    ViewBag.Title = ViewBag.Titel;
+}
+
+<h2>@ViewBag.Titel</h2>
+<br />
+<table class="table table-striped">
+    <tr>
+        <th class="col-md-1">Device</th>
+        <th class="col-md-1">LogID</th>
+        <th class="col-md-1">Message</th>
+        <th class="col-md-1">Stacktrace</th>
+        <th class="col-md-1">Timestamp</th>
+    </tr>
+    @foreach (nmct.ba.cashlessproject.ITWeb.ViewModels.LogVM item in @Model)
+    {
+        <tr>
+            <td class="col-md-1">@item.register.Device</td>
+            <td class="col-md-1">@item.log.RegisterID</td>
+            <td class="col-md-1">@item.log.Message</td>
+            <td class="col-md-1">@item.log.Stacktrace</td>
+            <td class="col-md-1">@item.log.Timestamp</td>
+        </tr>
+    }
+</table>
+
+<p><a class="btn btn-primary" href="/Log/Index">Back</a></p>

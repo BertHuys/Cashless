@@ -1,0 +1,56 @@
+﻿<Window x:Class="nmct.ba.cashlessproject.tempui.AccBeheerMan"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+       Title="AccBeheerMan" Height="600" Width="900">
+    <Grid>
+        <Grid Grid.Row="0">
+            <TextBlock Style="{StaticResource Titelapp}">Cashless Payment</TextBlock>
+        </Grid>
+        <Grid Grid.Row="1">
+            <TextBlock HorizontalAlignment="Right" Margin="0 0 20px 0">log uit</TextBlock>
+            <TextBlock HorizontalAlignment="left" Margin="20px 0 0 0">welkom beheerder</TextBlock>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Button Margin="0" HorizontalAlignment="Center" Padding="0">Accountbeheer</Button>
+            <Button Grid.Column="1" Margin="0" HorizontalAlignment="Center" Padding="0">Product</Button>
+            <Button Grid.Column="2" Margin="0" HorizontalAlignment="Center" Padding="0">Medewerkers</Button>
+            <Button Grid.Column="3" Margin="0" HorizontalAlignment="Center" Padding="0">Kassa</Button>
+            <Button Grid.Column="4" Margin="0" HorizontalAlignment="Center" Padding="0">Klanten</Button>
+            <Button Grid.Column="5" Margin="0" HorizontalAlignment="Center" Padding="0">statistieken</Button>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+        </Grid>
+        <Grid Grid.Row="3">
+            <StackPanel Grid.Column="1">
+                <TextBlock Style="{StaticResource GenText}" >beheerder</TextBlock>
+                <TextBlock Style="{StaticResource GenText}">info</TextBlock>
+                <TextBlock Style="{StaticResource GenText}">vereniging</TextBlock>
+                <Button>wijzig wachtwoord</Button>
+                <Label>Huidig Wachtwoord</Label>
+                <TextBox></TextBox>
+                <Label>Nieuw Wachtwoord</Label>
+                <TextBox></TextBox>
+                <Label>Wachtwoord Comfirmatie</Label>
+                <TextBox></TextBox>
+                <Button Content="Ok" Margin="246,40,286,0"/>
+            </StackPanel>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="120"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="120"/>
+            </Grid.ColumnDefinitions>
+        </Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="48px"/>
+            <RowDefinition Height="20px"/>
+            <RowDefinition Height="48px"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+    </Grid>
+</Window>

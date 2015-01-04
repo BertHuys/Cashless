@@ -1,0 +1,55 @@
+﻿<Window x:Class="nmct.ba.cashlessproject.tempui.KlantBeheerMan"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         Title="KlantBeheerMan" Height="600" Width="900">
+    <Grid>
+        <Grid Grid.Row="0">
+            <TextBlock Style="{StaticResource Titelapp}">Cashless Payment</TextBlock>
+        </Grid>
+        <Grid Grid.Row="1">
+            <TextBlock Name="LogUit" HorizontalAlignment="Right" Margin="0 0 20px 0">log uit</TextBlock>
+            <TextBlock Name="Welkom" HorizontalAlignment="left" Margin="20px 0 0 0">welkom beheerder</TextBlock>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Button Margin="0" HorizontalAlignment="Center" Padding="0">Accountbeheer</Button>
+            <Button Grid.Column="1" Margin="0" HorizontalAlignment="Center" Padding="0">Product</Button>
+            <Button Grid.Column="2" Margin="0" HorizontalAlignment="Center" Padding="0">Medewerkers</Button>
+            <Button Grid.Column="3" Margin="0" HorizontalAlignment="Center" Padding="0">Kassa</Button>
+            <Button Grid.Column="4" Margin="0" HorizontalAlignment="Center" Padding="0">Klanten</Button>
+            <Button Grid.Column="5" Margin="0" HorizontalAlignment="Center" Padding="0">statistieken</Button>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+        </Grid>
+        <Grid Grid.Row="3">
+            <ListBox Grid.Column="1" Margin="0 20px 0 20px"></ListBox>
+            <StackPanel Grid.Column="2" Margin="0 21px 0 20px">
+                <TextBlock Style="{StaticResource GenText}">klant (selected)</TextBlock>
+                <TextBlock Style="{StaticResource GenText}">informatie</TextBlock>
+                <TextBlock Style="{StaticResource GenText}">informatie</TextBlock>
+                <TextBlock Style="{StaticResource GenText}">informatie</TextBlock>
+                <TextBlock Style="{StaticResource GenText}">informatie</TextBlock>
+                <Button Name="btnWijzigMed" Margin="50px 10px 0 0">Wijzig</Button>
+                <Button Name="btnVerwMed" Margin="50px 10px 0 0">Voeg toe</Button>
+                <Button Name="btnVoegMed" Margin="50px 10px 0 0">Verwijder</Button>
+            </StackPanel>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="120"/>
+                <ColumnDefinition Width="240"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="120"/>
+            </Grid.ColumnDefinitions>
+        </Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="48px"/>
+            <RowDefinition Height="20px"/>
+            <RowDefinition Height="48px"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+    </Grid>
+</Window>

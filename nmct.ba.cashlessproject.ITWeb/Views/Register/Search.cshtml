@@ -1,0 +1,32 @@
+﻿﻿@model IEnumerable<nmct.ba.cashlessproject.ITWeb.ViewModels.RegisterVM>
+@{
+    ViewBag.Title = ViewBag.Titel;
+}
+
+<h2>@ViewBag.Titel</h2>
+<br />
+@if (ViewBag.Titel != "No results.")
+{
+    <table class="table table-striped">
+        <tr>
+            <th class="col-md-1">Register ID</th>
+            <th class="col-md-1">Name</th>
+            <th class="col-md-1">Device</th>
+            <th class="col-md-1">Purchase Date</th>
+            <th class="col-md-1">Expiration Date</th>
+
+        </tr>
+        @foreach (nmct.ba.cashlessproject.ITWeb.ViewModels.RegisterVM item in @Model)
+        {
+            <tr>
+                <td class="col-md-1">@item.register.Id</td>
+                <td class="col-md-1">@item.register.RegisterName</td>
+                <td class="col-md-1">@item.register.Device</td>
+                <td class="col-md-1">@item.register.PurchaseDate</td>
+                <td class="col-md-1">@item.register.ExpiresDate</td>
+            </tr>
+        }
+    </table>
+}
+
+<p><a class="btn btn-primary" href="/Register/Index">Back</a></p>

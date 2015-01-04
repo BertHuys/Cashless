@@ -1,0 +1,101 @@
+﻿﻿@{
+    ViewBag.Title = "Register";
+}
+
+<h2>Summary</h2>
+<br />
+@using (Html.BeginForm("Search", "Register", FormMethod.Get))
+{
+    <ul class="list-inline">
+        <li>
+            <select name="organisation">
+                @foreach (var item in ViewBag.Organisations)
+                {
+                    <option value="@item.ID">@item.OrganisationName</option>
+                }
+            </select>
+        </li>
+        <li>
+            <input class="btn btn-primary" type="submit" value="Show Registers" />
+        </li>
+        <li style="float:right"><a class="btn btn-primary" href="/Register/Edit">Add/Edit Register</a></li>
+        <li style="float:right"><a class="btn btn-primary" href="/Register/New">New Register</a></li>
+    </ul>
+}
+<br />
+<div role="tabpanel">
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab">Available</a></li>
+        <li role="presentation"><a href="#tab2" aria-controls="tab2" role="tab" data-toggle="tab">Not Available</a></li>
+        <li role="presentation"><a href="#tab3" aria-controls="tab3" role="tab" data-toggle="tab">All</a></li>
+    </ul>
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="tab1">
+            <table class="table table-striped">
+                <tr>
+                    <th class="col-md-1">Register ID</th>
+                    <th class="col-md-1">Name</th>
+                    <th class="col-md-1">Device</th>
+                    <th class="col-md-1">Purchase Date</th>
+                    <th class="col-md-1">Expiration Date</th>
+                </tr>
+                @foreach (var item in ViewBag.BeschikbareRegisters)
+                {
+                    <tr>
+                        <td class="col-md-1">@item.register.Id</td>
+                        <td class="col-md-1">@item.register.RegisterName</td>
+                        <td class="col-md-1">@item.register.Device</td>
+                        <td class="col-md-1">@item.register.PurchaseDate</td>
+                        <td class="col-md-1">@item.register.ExpiresDate</td>
+                    </tr>
+                }
+            </table>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="tab2">
+            <table class="table table-striped">
+                <tr>
+                    <th class="col-md-1">Register ID</th>
+                    <th class="col-md-1">Name</th>
+                    <th class="col-md-1">Organisation</th>
+                    <th class="col-md-1">Device</th>
+                    <th class="col-md-1">Purchase Date</th>
+                    <th class="col-md-1">Expiration Date</th>
+                </tr>
+                @foreach (var item in ViewBag.ToegekendeRegisters)
+                {
+                    <tr>
+                        <td class="col-md-1">@item.register.Id</td>
+                        <td class="col-md-1">@item.register.RegisterName</td>
+                        <td class="col-md-1">@item.organisation.OrganisationName</td>
+                        <td class="col-md-1">@item.register.Device</td>
+                        <td class="col-md-1">@item.register.PurchaseDate</td>
+                        <td class="col-md-1">@item.register.ExpiresDate</td>
+                    </tr>
+                }
+            </table>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="tab3">
+            <table class="table table-striped">
+                <tr>
+                    <th class="col-md-1">Register ID</th>
+                    <th class="col-md-1">Name</th>
+                    <th class="col-md-1">Organisation</th>
+                    <th class="col-md-1">Device</th>
+                    <th class="col-md-1">Purchase Date</th>
+                    <th class="col-md-1">Expiration Date</th>
+                </tr>
+                @foreach (var item in ViewBag.Registers)
+                {
+                    <tr>
+                        <td class="col-md-1">@item.register.Id</td>
+                        <td class="col-md-1">@item.register.RegisterName</td>
+                        <td class="col-md-1">@item.organisation.OrganisationName</td>
+                        <td class="col-md-1">@item.register.Device</td>
+                        <td class="col-md-1">@item.register.PurchaseDate</td>
+                        <td class="col-md-1">@item.register.ExpiresDate</td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+</div>

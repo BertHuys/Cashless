@@ -1,0 +1,39 @@
+﻿@model IEnumerable<nmct.ba.cashlessproject.ITWeb.ViewModels.LogVM>
+@{
+    ViewBag.Title = "Log";
+}
+
+<h2>Log</h2>
+<br />
+@using (Html.BeginForm("Search", "Log", FormMethod.Get))
+{
+    <p>
+        <select name="register">
+            @foreach (var item in ViewBag.Registers)
+            {
+                <option value="@item.Id">@item.RegisterName</option>
+            }
+        </select>
+        <input class="btn btn-primary" type="submit" value="Search" />
+    </p>
+    <br />
+}
+<table class="table table-striped">
+    <tr>
+        <th class="col-md-1">Register</th>
+        <th class="col-md-1">RegisterID</th>
+        <th class="col-md-1">Message</th>
+        <th class="col-md-1">Stacktrace</th>
+        <th class="col-md-1">Timestamp</th>
+    </tr>
+    @foreach (nmct.ba.cashlessproject.ITWeb.ViewModels.LogVM item in @Model)
+    {
+        <tr>
+            <td class="col-md-1">@item.register.RegisterName</td>
+            <td class="col-md-1">@item.log.RegisterID</td>
+            <td class="col-md-1">@item.log.Message</td>
+            <td class="col-md-1">@item.log.Stacktrace</td>
+            <td class="col-md-1">@item.log.Timestamp</td>
+        </tr>
+    }
+</table>

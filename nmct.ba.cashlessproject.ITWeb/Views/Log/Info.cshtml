@@ -1,0 +1,82 @@
+﻿@model nmct.ba.cashlessproject.ITWeb.Models.RegisterLog
+
+@{
+    ViewBag.Title = "Info";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>KassaLogboek</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RegisterName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RegisterName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Device)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Device)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PurchaseDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PurchaseDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExpiresDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExpiresDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RegisterID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RegisterID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Timestamp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Timestamp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Message)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Message)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Stacktrace)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Stacktrace)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
